@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+            #quiz{
+                background-color: lightcoral;
+                height: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: xx-large;
+                
+            }
+            .quiz{
+                color: pink;
+                margin-right: 50%;
+                margin-left: 50%;
+            }
+            .user{
+                color: plum;
+                font-family: Georgia;
+                font-size: large;
+            }
+            .play   {
+                color: plum;
+                font-family: Georgia;
+                font-size: large;
+            }
+            .home   {
+                color: plum;
+                font-family: Georgia;
+                font-size: large;
+            }
+        </style>
+    </head>
+    <body>
+       <div id="quiz">
+           <div class="quiz"><i><u>Quiz Game</u></i></div>
+           <div class="user">Hello <br>{{user.name}}</div><br>
+           <div class='home'> Back to Home page <- <a href="/home"><i>Home</i></a></div><br>
+           <div class='play'> Play Quiz Game -><a href="/exam"><input type="button" value="Next"></a></div>
+           
+        </div> 
+    </body>
+</html>

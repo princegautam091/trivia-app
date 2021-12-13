@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Result</title>
+	</head>
+	<body>
+		<h1>Result</h1>
+		<div><form method="post">
+			{% csrf_token %}
+			<p>Your can add options for your question
+			<br>question number1<br> {{q1}}<input type="submit" value="add question"></form></div>
+		
+			<div><form method="post">
+				{% csrf_token %}
+				<p>Your can add options for your question
+				<br>question number2<br> {{q2}}<input type="submit" value="add question"></form></div>		
+		
+		
+	</body>
+</html>
