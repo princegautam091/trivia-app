@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam 1 Page</title>
+    <style>
+        #quiz{
+            background-color: lightcoral;
+            height: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: xx-large;
+            
+        }
+        .quiz{
+            color: pink;
+            margin-right: 50%;
+            margin-left: 50%;
+        }
+        .user{
+            color: plum;
+            font-family: Georgia;
+            font-size: large;
+        }
+        .play   {
+            color: plum;
+            font-family: Georgia;
+            font-size: large;
+        }
+        .home   {
+            color: plum;
+            font-family: Georgia;
+            font-size: large;
+        }
+
+</style>
+</head>
+<body>
+  <div id="quiz">
+    <div class="user">Hello <br>{{user.name}}</div>
+    <br>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="quiz"><i><u><h2>Quiz Game</h2></u></i></div>
+        <h3>Q) {{question.description}}</h3>
+          {% for choice in question.choices_set.all %}
+          <input type="radio" name="answer" value="{{answer}}" checked> {{choice.choice_text}} <br>
+          {% endfor %}
+        <br>
+        {% if question.id == first %}
+            <input type="submit" name="action" value="Next">
+        {% elif question.id == last_id %}
+            <input type="submit" name="action" value="Prev">
+            <input type="submit" name="action" value="Finish">
+        {% else %}
+            <input type="submit" name="action" value="Prev">
+            <input type="submit" name="action" value="Next">
+        {% endif %}
+
+    </form>
+</div>
+</body>
+</html>

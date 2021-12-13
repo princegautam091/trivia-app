@@ -1,0 +1,32 @@
+<html>
+<head>
+    <style>
+            #main{
+                background-color: cadetblue;
+                height: 50%;
+            }
+            .wel{
+                margin-left: 50%;
+                margin-right: 50%;
+                color: aquamarine;
+                font-size: x-large;
+            }
+            .name{
+                color: gold;
+            }
+
+    </style>
+</head>
+<body>
+<div id="main">
+
+    <div class="wel">welcome</div>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="name">What is your name:<br>{{user}} <input type="submit" value='enter'></div>
+    </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Exam</title>
+    <style>
+            #quiz{
+                background-color: lightcoral;
+                height: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: xx-large;
+                
+            }
+            .quiz{
+                color: pink;
+                margin-right: 50%;
+                margin-left: 50%;
+            }
+            .user{
+                color: plum;
+                font-family: Georgia;
+                font-size: large;
+            }
+
+    </style>
+</head>
+<body>
+
+<div id="quiz">
+    <div class="user">Hello <br>{{user.name}}</div>
+    <br>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="quiz"><i><u><h2>Quiz Game</h2></u></i></div>
+        <h3>Q {{qno}}. {{question.question}}</h3>
+        {% for answer in question.answers %}
+        {% if answer == question.answer %}
+        <input type="radio" name="answer" value="{{answer}}" checked> {{answer}} <br>
+        {% else %}
+        <input type="radio" name="answer" value="{{answer}}"> {{answer}} <br>
+        {% endif %}
+        {% endfor %}
+        <br>
+
+        {% if qno != 1 %}
+        <input type="submit" name="action" value="Previous">
+        {% endif %}
+
+        {% if qno < total %}
+        <input type="submit" name="action" value="Next">
+        {% endif %}
+
+        {% if qno == total %}
+        <input type="submit" name="action" value="Finish">
+        {% endif %}
+    </form>
+</div>
+</body>
+</html>
